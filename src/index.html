@@ -9,10 +9,13 @@
     <script src="../js/main.js"></script>
 </head>
 <body>
+    <div id="background"><!-- TODO 背景画像にcssで設定 -->
+        <img id="bg_img" src="../img/background.jpg" alt="#">
+    </div>
     <header>
         <div class="header">
-            <h1 class="h1">Typing Game</h1>
-            <nav class="navibar">
+            <h1 class="h1">Typing Game</h1> <!-- タイトル -->
+            <nav class="navibar"> <!-- ナビゲーションバー -->
                 <ul>
                     <li>HOME</li>
                     <li>TEMP1</li>
@@ -24,10 +27,17 @@
     <main>
         <div class="main">
             <div class="main_container">
-                <span class="selected_word">Selected word</span>
-                <textarea name="#" id="input_word" cols="10" rows="1"></textarea>
+                <div class="selected_word">Selected Word</div>
+                <input type="text" class="typed_text">
             </div>
         </div>
     </main>
+    <footer>
+        <div class="footer">
+            <p class="copyright">Copyright &copy;
+                <span class="current_year">2024</span>
+                Designed by "Hayate Aoki"</p>
+        </div>
+    </footer>
 </body>
 </html>
