@@ -6,35 +6,38 @@
     <title>JavaScript Exam</title>
     <link rel="icon" type="image/png" href="../img/favicon.png" sizes="">
     <link rel="stylesheet" href="../css/style.css">
-    <script src="../js/main.js"></script>
 </head>
 <body>
     <header>
         <div class="header">
-            <h1 class="h1">Typing Game</h1> <!-- タイトル -->
-            <nav class="navibar"> <!-- ナビゲーションバー -->
-                <ul>
-                    <li>HOME</li>
-                    <li>TEMP1</li>
-                    <li>TEMP2</li>
+            <h1 class="title">Typing Game</h1> <!-- タイトル -->
+            <nav class="nav"> <!-- ナビゲーションバー -->
+                <ul class="menu_group">
+                    <li class="menu_elment"><a href="#">HOME</a></li>
+                    <li class="menu_elment"><a href="#">TEMP1</a></li>
+                    <li class="menu_elment"><a href="#">TEMP2</a></li>
                 </ul>
             </nav>
         </div>
     </header>
     <main>
         <div class="main">
-            <div class="main_container">
-                <div class="selected_word">Selected Word</div>
-                <input type="text" class="typed_text">
-            </div>
+            <strong>
+                <span id="selected_word"></span>
+            </strong>
+            <form id="typing_area" action="#">
+                <input type="text" id="typed_text">
+                <input type="button" id="submit_button" onclick="typingText()" value="Submit">
+            </form>
+            <span id="display_text"></span>
         </div>
     </main>
     <footer>
         <div class="footer">
-            <p class="copyright">Copyright &copy;
-                <span class="current_year">2024</span>
-                Designed by "Hayate Aoki"</p>
+            <p class="copyright">Copyright &copy; <span id="current_year"><!-- 現在の年数を表示 --></span> Designed by "Hayate Aoki"</p>
         </div>
     </footer>
+    <script src="../js/main.js"></script>
+    <script src="../js/footer.js"></script>
 </body>
 </html>
