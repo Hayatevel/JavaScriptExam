@@ -1,4 +1,10 @@
-function selectingWord() {
+async function getWords() {
+    const wordsResponse = await fetch(`../json/words.json`);
+    return await wordsResponse.json();
+}
+
+async function selectingWord() {
+    const getWords = await getWords().value;
     const wordsArray = ["a", "b", "c", "d", "e", "f",];
     let wordsArrayLengthValue = wordsArray.length;
     let randomNumber = Math.floor(Math.random() * (wordsArrayLengthValue) + 0);
