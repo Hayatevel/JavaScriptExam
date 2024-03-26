@@ -14,13 +14,13 @@ body {
     display: flex;
     width: 100%;
     height: 100px;
-    background-color: aliceblue;
+    background-color: rgba(228, 182, 247, 0.45);
     align-items: center;
     border-radius: 20px;
 }
 
 .title {
-    margin-right: auto;
+    margin: 0 auto;
 }
 
 .menu_group {
@@ -32,7 +32,7 @@ body {
 .main {
     width: 100%;
     text-align: center;
-    background-color: rgba(228, 182, 247, 0.7);
+    background-color: rgba(228, 182, 247, 0.3);
     margin: 5rem 0;
     padding-top: 15px;
     padding-bottom: 15px;
@@ -43,7 +43,8 @@ font-family: 'Courier New', Courier, monospace;
     font-size: 4em;
     font-weight: bold;
     color: black;
-    width: auto;
+    width: 50%;
+    margin: 0 auto;
     text-align: center;
     border: 1px solid rebeccapurple;
     
@@ -58,6 +59,14 @@ span {
     color: whitesmoke;
 }
 
+#time {
+    color: coral;
+}
+
+#correct {
+    font-size: large;
+}
+
 footer {
     position: fixed;
     padding: 2px;
@@ -66,9 +75,6 @@ footer {
     bottom: 0;
     width: 100%;
     background-color: aliceblue;
-}
-.footer {
-
 }
 
 @media (min-width: 768px) {

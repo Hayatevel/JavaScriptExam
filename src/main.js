@@ -52,13 +52,17 @@ let TIME = 60;
 const correct = document.getElementById('correct');
 
 const countdown = setInterval(() => {
-    timer.textContent = `制限時間： ${--TIME}秒`;
+    timer.innerHTML = `Limit Time <span id="time">${--TIME}</span>sec.`;
     if(TIME <= 0) finish();
 }, 1000);
 
 function finish() {
     clearInterval(countdown);
-    correct.textContent = `正解数は ${score}個でした!`;
+    correct.innerHTML = `
+        Corrected is ${score}!
+        You want to play again? Let\'s play...
+        and you need to reload this site.
+    `;
     state = false;
 }
 
