@@ -22,14 +22,19 @@
     </header>
     <main>
         <div class="main">
-            <strong>
-                <span id="selected_word"></span>
-            </strong>
-            <form id="typing_area" action="#">
-                <input type="text" id="typed_text">
-                <input type="button" id="submit_button" onclick="typingText()" value="Submit">
-            </form>
-            <span id="display_text"></span>
+            <p id="text"></p>
+            <p class="info">Letter score
+                <h2 id="score">
+                    0
+                </h2>
+                Miss score
+                <h2 id="miss">
+                    0
+                </h2>
+            </p>
+            <p id="timer"></p>
+            <P id = "correct"></P>
+            <p id="error"><strong></strong></p>
         </div>
     </main>
     <footer>
@@ -37,7 +42,6 @@
             <p class="copyright">Copyright &copy; <span id="current_year"><!-- 現在の年数を表示 --></span> Designed by "Hayate Aoki"</p>
         </div>
     </footer>
-    <script src="../js/main.js"></script>
-    <script src="../js/footer.js"></script>
+    <script src="./main.js"></script>
 </body>
 </html>
