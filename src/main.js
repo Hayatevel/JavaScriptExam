@@ -1,51 +1,31 @@
-// async function getJson() {
-//     try {
-//         const response = await fetch(`./json/words.json`);
-//         return response.json();
-//     }
-//     catch(err) {
-//         console.log(err);
-//         err.innerHTML = `${err.message}`;
-//         return null;
-//     }
-// }
+async function getJson() {
+    try {
+        const response = await fetch("./json/words_test.json");
+        const jsonData = await response.json();
+        return jsonData.words;
+    }
+    catch(err) {
+        console.log(err);
+        err.innerHTML = `${err.message}`;
+        return null;
+    }
+}
 
 
 let p = document.getElementById('text');
 let err = document.getElementById('error');
-//タイピングする文字列をここで用意しておく
 
-const textLists = [
-    "apple",
-    "banana",
-    "chocolate",
-    "django",
-    "elephant",
-    "facebook",
-    "google",
-    "honeycomb",
-    "instagram",
-    "jingle",
-    "knockout",
-    "linkedin",
-    "museum",
-    "newsletter",
-    "open",
-    "question",
-    "reddit",
-    "seattle",
-    "telescope",
-    "unicode",
-    "vimeo",
-    "watch",
-    "xing",
-    "youtube",
-    "zoom"
-];
-
+let textLists =[];
 let checkTexts = [];
 
-createText();
+// 非同期処理でJSONデータを取得し、textListsに格納
+getJson().then(data => {
+    if(data) {
+        textLists = data;
+        console.log(textLists); // For debag
+        createText();
+    }
+});
 
 const timer = document.getElementById('timer');
 let TIME = 60;
