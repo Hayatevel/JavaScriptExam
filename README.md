@@ -1,7 +1,6 @@
 # JavaScriptExam
 JavaScript Exam App
 
-<img width="50%" src="./img/test_image.png">
 ---
 
 # 英単語タイピングゲーム
@@ -28,9 +27,9 @@ npm install -g http-server
 2. 以下のコマンドを実行してhttp-serverを起動します。
 
 ```
+cd app
 http-server
 ```
-
 
 3. ブラウザで http://localhost:8080 を開きます。
 
