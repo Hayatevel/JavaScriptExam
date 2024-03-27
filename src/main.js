@@ -89,9 +89,7 @@ let state = true;
 //キーボードからの入力は「e.key」に格納されている
 window.addEventListener('keydown', e => {
     if(e.key === checkTexts[0].textContent) {
-        if(!state) {
-            return;
-        }
+        if(!state) return;
         console.log("score");
         checkTexts[0].className = 'add_color';
         score++;
@@ -100,9 +98,7 @@ window.addEventListener('keydown', e => {
         checkTexts.shift();
     }
     else {
-        if(!state) {
-            return;
-        }
+        if(!state) return;
         let bool = event.shiftKey;
         if(bool == true){
         }
