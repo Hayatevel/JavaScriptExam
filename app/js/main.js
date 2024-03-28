@@ -4,8 +4,8 @@ Apply to "../index.html"
 */
 
 // Get DOM Elements
-let p = document.getElementById("text");
 let err = document.getElementById("error");
+let text = document.getElementById("text");
 let timer = document.getElementById("timer");
 let correct = document.getElementById("correct");
 let scoreLabel = document.getElementById("score");
@@ -35,7 +35,7 @@ const getJson = async () => {
         const jsonData = await response.json();
         return jsonData.words;
     }
-    catch(err) { // jsonファイルの取得に失敗したらhtmlとconsoleに出力
+    catch(err) { // jsonファイルの取得に失敗したら"index.html"とconsoleに出力
         console.log(err);
         err.innerHTML = `${err.message}`;
         return null;
@@ -45,7 +45,7 @@ const getJson = async () => {
 /*
 非同期処理でJSONデータを取得し、textListsに格納
 */
-getJson().then(data => {
+getJson().then((data) => {
     if(data) {
         textLists = data;
         console.log(textLists); // For debag
@@ -86,22 +86,22 @@ const finish = () => {
 const createText = () => {
 	let rnd = Math.floor(Math.random() * textLists.length); // 文字列をランダムに取得する
     console.log(`Random number: ${rnd}`);
-	p.textContent = ""; // 前の文字列を削除してから次の文字列を表示する
+	text.textContent = ""; // 前の文字列を削除してから次の文字列を表示する
     
 	/* 
     文字列を1文字ずつに分解して、それぞれにspanタグを挿入する
     */
-	checkTexts = textLists[rnd].split("").map(function(value) {
+	checkTexts = textLists[rnd].split("").map((value) => { // コールバック関数: .map((value) => {} ) で分割した回数分行う
         console.log(`Text Content: ${textLists[rnd]}`);
 		let span = document.createElement("span");
 		span.textContent = value;
-		p.appendChild(span);
+		text.appendChild(span);
 		return span;
 	});
 }
 
 /* 
-メインストリーム
+メインイベントリスナー
 @param "keydown", e
 @return void
 */
@@ -111,19 +111,14 @@ window.addEventListener("keydown", e => { // キーボードからの入力は�
         checkTexts[0].className = "add_color"; // 正解した文字は"style.css"で色とサイズを変える
         score++;
         console.log(`Corrected: ${score}`)
-        scoreLabel.textContent = score;
+        scoreLabel.textContent = score; // 正解文字数の表示と更新
         checkTexts.shift(); // 0番目の配列要素を削除して次の1文字を比較対象にする
     }
     else {
         if(!state) return; // 制限時間切れしていないか
-        let bool = event.shiftKey;
-        if(bool == true){
-        }
-        else if(bool == false){
-            miss++;
-            console.log(`Missed: ${miss}`);
-            missLabel.textContent = miss;
-        }
+        miss++;
+        console.log(`Missed: ${miss}`);
+        missLabel.textContent = miss; // 誤答文字数の表示と更新
     }
     // 配列要素が空っぽになったら次の問題を出す
     if(!checkTexts.length) {

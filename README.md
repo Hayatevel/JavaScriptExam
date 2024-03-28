@@ -1,7 +1,7 @@
 # JavaScriptExam
 JavaScript Exam App
 
----
+- - -
 
 # 英単語タイピングゲーム
 
