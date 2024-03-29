@@ -38,7 +38,7 @@ body {
     margin: 0 auto; /* Map to center */
 }
 
-.main {
+.main_container {
     width: 100%;
     text-align: center;
     background-color: rgba(228, 182, 247, 0.3);
